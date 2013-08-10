@@ -1,1 +1,30 @@
-“Hello, world”
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML 5 Video</title>
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.sg.video.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	var browserSupport = JSON.stringify($.support.video);
+	$('#browserCapabilities').html('browser support:\n'+browserSupport);
+	
+	var videofile = {
+		'ogg'	: 'movies/movie.ogv', 
+		'h264'	: 'movies/movie.mp4', 
+		'webm'	: 'movies/movie.webm', 
+		'flash'	: 'movies/movie.swf'
+	};
+	
+	$('#testVideo1').video(videofile,{'autoplay':true, 'width':640, 'height':480});
+	
+});
+</script>
+</head>
+
+<body>
+	<div id="browserCapabilities"></div>
+	<div id="testVideo1"></div>
+</body>
+</html>
